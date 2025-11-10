@@ -1062,7 +1062,7 @@ class ChatMemoryServer:
         """Handle saveprogress tool call."""
         chat_text = arguments["chat_text"]
         slot_name = arguments.get("slot_name") or self.storage.get_current_slot()
-        compression_ratio = arguments.get("compression_ratio", 0.15)
+        compression_ratio = arguments.get("compression_ratio", 0.25)  # Increased from 0.15 based on research
 
         if not slot_name:
             return [TextContent(type="text", text=self.ERROR_NO_SLOT_SELECTED)]
